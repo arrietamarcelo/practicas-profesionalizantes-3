@@ -1,0 +1,10 @@
+sequenceDiagram
+    participant Usuario as Usuario
+    participant Sistema as Sistema
+    participant Sistema_de_Pagos as Sistema de Pagos
+    participant Notificaciones as Notificaciones
+    Usuario->>+Sistema: Solicitar pagar estacionamiento
+    Sistema->>+Sistema_de_Pagos: Procesar pago
+    Sistema_de_Pagos-->>-Sistema: Confirmación de pago
+    Sistema->>Notificaciones: Enviar confirmación de pago
+    Notificaciones-->>Usuario: Notificación de pago recibida

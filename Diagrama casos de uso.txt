@@ -1,0 +1,22 @@
+classDiagram
+    class Usuario {
+      <<actor>>
+      Realizar pago
+      Recibir notificaciones
+    }
+    class Sistema_de_Pagos {
+      <<actor>>
+      Procesar pago
+    }
+    class Operador {
+      <<actor>>
+      Generar informes
+      Administrar usuarios
+    }
+    class Sistema {
+      Registrar vehículo
+      Iniciar estacionamiento
+    }
+    Usuario --> Sistema : Usa
+    Sistema --> Sistema_de_Pagos : Usa
+    Operador --> Sistema : Administra

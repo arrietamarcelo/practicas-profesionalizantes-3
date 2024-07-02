@@ -1,0 +1,42 @@
+classDiagram
+    class Vehiculo {
+      +String patente
+      +String marca
+      +String modelo
+      +DateTime horaEntrada
+      +DateTime horaSalida
+      +registrarEntrada()
+      +registrarSalida()
+    }
+    class Usuario {
+      +int idUsuario
+      +String nombre
+      +Vehiculo vehiculo
+      +String formaPago
+      +realizarPago()
+      +recibirNotificacion()
+    }
+    class Pago {
+      +int idPago
+      +int idUsuario
+      +double monto
+      +DateTime fecha
+      +procesarPago()
+      +validarPago()
+    }
+    class Notificacion {
+      +int idNotificacion
+      +int idUsuario
+      +String mensaje
+      +enviarNotificacion()
+    }
+    class Administrador {
+      +int idOperador
+      +String nombre
+      +generarInforme()
+      +administrarUsuario()
+    }
+    Usuario "1" -- "1..*" Vehiculo : tiene
+    Usuario "1" -- "1..*" Pago : realiza
+    Usuario "1" -- "1..*" Notificacion : recibe
+    Administrador "1" -- "N..*" Usuario : administra

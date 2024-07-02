@@ -1,0 +1,9 @@
+sequenceDiagram
+    participant Usuario as Usuario
+    participant Sistema as Sistema
+    participant Notificaciones as Notificaciones
+    Usuario->>+Sistema: Entrar al estacionamiento
+    Sistema->>+Sistema: Detectar vehículo
+    Sistema->>-Usuario: Registrar vehículo
+    Sistema->>Notificaciones: Enviar notificación de inicio
+    Notificaciones-->>Usuario: Notificación recibida
